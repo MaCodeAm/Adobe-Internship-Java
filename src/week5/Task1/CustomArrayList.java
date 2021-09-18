@@ -88,7 +88,20 @@ public class CustomArrayList<T> {
         copyArrayDelete(index);
     }
 
-    public void bubbleSort(Comparator<? super T> comparator) {
+    public void bubbleSort(Comparator<? super T> comparator, T[] array) {
+
+        for (int i = 0; i < arr.length; i++) {
+            T temp;
+            for (int j = i + 1; j < arr.length - i; j++) {
+                if (comparator.compare(array[i], array[j]) > 0) {
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+
+
+                }
+            }
+        }
 
     }
 }
